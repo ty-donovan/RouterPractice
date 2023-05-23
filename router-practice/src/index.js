@@ -12,10 +12,10 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-        <Route path="home" element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="*" element={<h1>Not Found</h1>} />
+      <Route index element={<Home />} />
+      <Route path="login" element={<Login />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')
