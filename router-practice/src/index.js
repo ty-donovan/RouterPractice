@@ -1,10 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import { render } from "react-dom";
+import { BrowserRouter,
+  Routes,
+  Route, } from "react-router-dom";
+import Login from "./Login";
+import Contact from "./Contact";
+import Home from "./Home";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+        <Route path="home" element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
